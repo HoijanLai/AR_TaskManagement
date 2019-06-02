@@ -8,27 +8,22 @@
 
 import UIKit
 
-protocol DataChangeDelegate {
 
-    func onEditData(at indexPath: IndexPath, _ date: Date, _ description: String)
-    func onUpdateData() 
-    func onDeleteData(at indexPath: IndexPath)
-    
+protocol TaskVCDelegate {
+    func onUpdateData()
 }
 
 
 class TasksVC: UIViewController {
 
     @IBOutlet weak var tasksTable: UITableView!
-
+    @IBOutlet weak var welcomeText: UIStackView!
 
     var booksManager: BooksManager!
     var book: Book!
 
-    var delegate: DataChangeDelegate?
+    var delegate: TaskVCDelegate?
 
-
-    var lastTappedCell: Int = -1
 
 
     override func viewDidLoad() {
@@ -36,11 +31,13 @@ class TasksVC: UIViewController {
 
         tasksTable.delegate = self
         tasksTable.dataSource = self
+
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tasksTable.isHidden = (book.tasks!.count <= 0)
+        welcomeText.isHidden = (book.tasks!.count > 0)
     }
 
     func initData(booksManager: BooksManager, book: Book) {
@@ -62,6 +59,7 @@ class TasksVC: UIViewController {
         editVC.delegate = self
         editVC.modalPresentationStyle = .overFullScreen
         editVC.modalTransitionStyle = .crossDissolve
+        tasksTable.reloadData()
         self.present(editVC, animated: true)
     }
 
@@ -71,30 +69,26 @@ class TasksVC: UIViewController {
 /*
  Interaction with TasksCell
  */
-extension TasksVC: DataChangeDelegate {
-    func onUpdateData() {
-
-    }
-
+extension TasksVC: TaskCellDelegate {
     func onDeleteData(at indexPath: IndexPath) {
         self.booksManager.deleteTask(task: (self.booksManager.getSortedTasks(self.book)[indexPath.row]), { (_) in })
         tasksTable.reloadData()
-        tasksTable.isHidden = (book.tasks!.count <= 0)
+        welcomeText.isHidden = (book.tasks!.count > 0)
     }
 
     func onEditData(at indexPath: IndexPath, _ date: Date, _ description: String) {
         let task = self.booksManager.getSortedTasks(self.book)[indexPath.row]
-        task.taskDeadline = date
-        task.taskDescription = description
+        task.deadline = date
+        task.content = description
         tasksTable.reloadData()
     }
 }
 
-extension TasksVC: EditDelegate {
+extension TasksVC: EditVCDelegate {
     func onReceiveData(_ date: Date, _ task: String) {
-        booksManager.insertForBook(book: book, tasks: (date, task)) { (_) in }
+        booksManager.insertForBook(book: book, task: (date, task, 0)) { (_) in }
         tasksTable.reloadData()
-        tasksTable.isHidden = (book.tasks!.count <= 0)
+        welcomeText.isHidden = (book.tasks!.count > 0)
     }
 }
 
@@ -137,20 +131,15 @@ extension TasksVC: UITableViewDelegate, UITableViewDataSource {
 
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        lastTappedCell = indexPath.row
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        guard let taskCell = tableView.cellForRow(at: indexPath) as? TaskCell else { return }
+        taskCell.toggleActions(true)
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = tableView.cellForRow(at: indexPath)?.layer.frame.height
-        if indexPath.row == lastTappedCell {
-            let newHeight = (height == tableView.rowHeight) ? 100: tableView.rowHeight
-            lastTappedCell = -1
-            return newHeight
-        }
-        return tableView.rowHeight
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let taskCell = tableView.cellForRow(at: indexPath) as? TaskCell else { return }
+        taskCell.toggleActions(false)
     }
+
 
 
 

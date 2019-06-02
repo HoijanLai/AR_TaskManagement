@@ -7,7 +7,7 @@
 
 import UIKit
 
-class KeyboardAdaptiveScrollView: UIScrollView {
+class ExtScrollView: UIScrollView {
     
     override func awakeFromNib() {
         // listen to keyboard

@@ -12,9 +12,6 @@ import UIKit
 @IBDesignable
 class ExtView: UIView {
 
-    override func awakeFromNib() {
-        self.clipsToBounds = true
-    }
     @IBInspectable
     public var cornerRadius: CGFloat = 2.0 {
         didSet {
@@ -22,15 +19,82 @@ class ExtView: UIView {
         }
     }
 
-
-
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBInspectable
+    public var shadow: Bool = false {
+        didSet {
+            self.clipsToBounds = !shadow
+            self.dropShadow()
+        }
     }
-    */
+
+    @IBInspectable
+    public var shadowColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
+        didSet {
+            self.dropShadow()
+        }
+    }
+
+    @IBInspectable
+    public var shadowOpacity: Float = 0.2 {
+        didSet {
+            self.dropShadow()
+        }
+    }
+
+    @IBInspectable
+    public var shadowOffsetX: CGFloat = 0.0 {
+        didSet {
+            self.dropShadow()
+        }
+    }
+
+
+    @IBInspectable
+    public var shadowOffsetY: CGFloat = 0.0 {
+        didSet {
+            self.dropShadow()
+        }
+    }
+
+
+    @IBInspectable
+    public var shadowRadius: CGFloat = 10 {
+        didSet {
+            self.dropShadow()
+        }
+    }
+
+
+    func dropShadow() {
+        if shadow {
+            let shadowLayer = CAShapeLayer()
+            shadowLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
+            shadowLayer.fillColor = backgroundColor?.cgColor
+            shadowLayer.shadowColor = shadowColor.cgColor
+            shadowLayer.shadowPath = shadowLayer.path
+            shadowLayer.shadowOffset = CGSize(width: shadowOffsetX, height: shadowOffsetY)
+            shadowLayer.shadowOpacity = shadowOpacity
+            shadowLayer.shadowRadius = shadowRadius
+            layer.insertSublayer(shadowLayer, at: 0)
+
+        }
+
+    }
+
+
+
+    func createHole(_ hole: CGPath) {
+        // TODO: reject open Path
+        let p = CGMutablePath()
+        p.addRect(self.bounds)
+        p.addPath(hole)
+        let s = CAShapeLayer()
+        s.path = p
+        s.fillRule = CAShapeLayerFillRule.evenOdd
+        layer.mask = s
+    }
+
 
 }
+
+

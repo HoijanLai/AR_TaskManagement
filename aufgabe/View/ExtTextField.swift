@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-class GlassTextField: UITextField {
+class ExtTextField: UITextField {
 
     override func draw(_ rect: CGRect) {
         clipsToBounds = true
@@ -25,7 +25,7 @@ class GlassTextField: UITextField {
 
     func customizeView() {
         backgroundColor = #colorLiteral(red: 0.9961728454, green: 0.9902502894, blue: 1, alpha: 0.2479398545)
-        layer.cornerRadius = 5.0
+        layer.cornerRadius = 12.0
         
         if let p = placeholder {
             let place = NSAttributedString(string: p, attributes: [.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5)])

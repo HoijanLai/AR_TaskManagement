@@ -10,10 +10,11 @@ import UIKit
 
 
 
-protocol EditDelegate {
+
+
+protocol EditVCDelegate {
     func onReceiveData(_ date: Date, _ description: String)
 }
-
 
 class EditVC: UIViewController {
 
@@ -25,7 +26,7 @@ class EditVC: UIViewController {
     var dateData: Date!
     var descriptionData: String!
 
-    var delegate: EditDelegate?
+    var delegate: EditVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,13 +46,17 @@ class EditVC: UIViewController {
         }
     }
 
-    func configVC(_ date: Date, _ description: String) {
+    func configView(_ date: Date, _ description: String) {
         dateData = date
         descriptionData = description
     }
-    
+
     @objc
     func didTap(_ gesture: UIGestureRecognizer) {
+        view.endEditing(true)
+    }
+
+    @IBAction func doneBtnTapped(_ sender: Any) {
         descriptionData = descriptionText.text
         dateData = datePick.date
         self.dismiss(animated: true) {
@@ -59,6 +64,9 @@ class EditVC: UIViewController {
         }
     }
 
+    @IBAction func cancelBtnTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
 
 }

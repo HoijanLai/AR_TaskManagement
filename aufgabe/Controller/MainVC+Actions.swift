@@ -20,6 +20,8 @@ extension MainVC: UINavigationControllerDelegate, UIImagePickerControllerDelegat
         let hitResults = sceneView.hitTest(tappedLocation, options: [.boundingBoxOnly: true])
 
         guard let hitNode = hitResults.first?.node else { return }
+        guard let hitName = hitNode.name else { return }
+        if hitName != "button" { return }
         hitNode.runAction(highlightAction)
         lastHitAnchor = (sceneView.anchor(for: hitNode) as! ARImageAnchor)
 
@@ -41,18 +43,13 @@ extension MainVC: UINavigationControllerDelegate, UIImagePickerControllerDelegat
 /*
  Interaction with TasksVC
  */
-extension MainVC: DataChangeDelegate {
-    func onEditData(at indexPath: IndexPath, _ date: Date, _ task: String) {
-        
-    }
-
-    func onDeleteData(at indexPath: IndexPath) {
-
-    }
-
+extension MainVC: TaskVCDelegate {
     func onUpdateData() {
         sceneView.session.run(booksManager.getTrackingConfig(), options: .resetTracking)
-        updateNodeForAnchor(lastHitAnchor!)
+        if lastHitAnchor != nil {
+            updateNodeForAnchor(lastHitAnchor!)
+        }
+        booksCollection.reloadData()
     }
 }
 
@@ -121,8 +118,9 @@ extension MainVC {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         print("Success")
         if let pickImg = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            booksManager.newData(refImg: pickImg, tasksList: []) { (completed) in
-                
+            booksManager.insertBook(refImg: pickImg, tasksList: []) { (completed) in
+                booksManager.fetchAllBooks(completion: { (_) in })
+                booksCollection.reloadData()
             }
         }
         picker.dismiss(animated: true, completion: nil)
