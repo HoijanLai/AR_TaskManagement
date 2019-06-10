@@ -1,21 +1,31 @@
 //
-//  ExtView.swift
+//  ExtVFXView.swift
 //  aufgabe
 //
-//  Created by Hoijan Lai on 2019/5/19.
+//  Created by Hoijan Lai on 2019/6/9.
 //  Copyright © 2019 Hoijan Lai. All rights reserved.
 //
 
 import UIKit
 
-
 @IBDesignable
-class ExtView: UIView {
+class ExtVFXView: UIVisualEffectView {
+
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
 
     @IBInspectable
     public var cornerRadius: CGFloat = 2.0 {
         didSet {
             self.layer.cornerRadius = self.cornerRadius
+            for sv in self.subviews {
+                sv.layer.cornerRadius = self.cornerRadius
+            }
         }
     }
 
@@ -64,20 +74,6 @@ class ExtView: UIView {
         }
     }
 
-    @IBInspectable
-    public var borderWidth: CGFloat = 1 {
-        didSet {
-            self.layer.borderWidth = self.borderWidth
-        }
-    }
-
-    @IBInspectable
-    public var borderColor: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) {
-        didSet {
-            self.layer.borderColor = self.borderColor.cgColor
-        }
-    }
-
 
     func dropShadow() {
         if shadow {
@@ -95,20 +91,4 @@ class ExtView: UIView {
 
     }
 
-
-
-    func createHole(_ hole: CGPath) {
-        // TODO: reject open Path
-        let p = CGMutablePath()
-        p.addRect(self.bounds)
-        p.addPath(hole)
-        let s = CAShapeLayer()
-        s.path = p
-        s.fillRule = CAShapeLayerFillRule.evenOdd
-        layer.mask = s
-    }
-
-
 }
-
-

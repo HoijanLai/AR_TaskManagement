@@ -68,12 +68,13 @@ class MainVC: UIViewController, ARSCNViewDelegate {
     // Book Collection
     @IBOutlet weak var itemBtnView: ExtView!
     @IBOutlet var itemSlideUpView: ExtView!
-    @IBOutlet weak var itemContentView: UIView!
+
 
 
     @IBOutlet weak var itemBtnToBottom: NSLayoutConstraint!
     @IBOutlet weak var itemBtnHeight: NSLayoutConstraint!
-    var itemBtnUp: Bool = false
+    var itemSlideUpManager: SlideUpManager!
+
 
 
     @IBOutlet weak var booksCollection: UICollectionView!
@@ -94,7 +95,6 @@ class MainVC: UIViewController, ARSCNViewDelegate {
             .fadeOpacity(to: 1.00, duration: 0.15)
             ])
     }
-
 
 
 
@@ -132,7 +132,8 @@ class MainVC: UIViewController, ARSCNViewDelegate {
         */
 
         // item button
-        initItemBtn()
+        itemSlideUpManager = SlideUpManager(itemBtnView, itemSlideUpView, view)
+
 
 
 

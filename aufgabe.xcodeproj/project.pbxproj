@@ -19,7 +19,10 @@
 		B23AF16F229D153400657D2A /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23AF16E229D153400657D2A /* BookCell.swift */; };
 		B23AF171229D350900657D2A /* ExtUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23AF170229D350900657D2A /* ExtUIImage.swift */; };
 		B2580C3F2237893E0090986E /* BooksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2580C3E2237893E0090986E /* BooksManager.swift */; };
+		B26053D222AC20620085C8D8 /* ExtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26053D122AC20620085C8D8 /* ExtButton.swift */; };
+		B26053D422AC24120085C8D8 /* ExtVFXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26053D322AC24120085C8D8 /* ExtVFXView.swift */; };
 		B27C67202299142900B8EDE0 /* ExtFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C671F2299142900B8EDE0 /* ExtFont.swift */; };
+		B27C8AC522ACAEFB007D83E5 /* SlideUpViewBtnManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C8AC422ACAEFB007D83E5 /* SlideUpViewBtnManage.swift */; };
 		B29099D722967972008B6A57 /* ExtTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29099D622967972008B6A57 /* ExtTableView.swift */; };
 		B29099FF2296EAEC008B6A57 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B29099FE2296EAEC008B6A57 /* art.scnassets */; };
 		B298C92A226A31E300103DC4 /* MainVC+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298C929226A31E300103DC4 /* MainVC+Actions.swift */; };
@@ -45,7 +48,10 @@
 		B23AF16E229D153400657D2A /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		B23AF170229D350900657D2A /* ExtUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtUIImage.swift; sourceTree = "<group>"; };
 		B2580C3E2237893E0090986E /* BooksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksManager.swift; sourceTree = "<group>"; };
+		B26053D122AC20620085C8D8 /* ExtButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtButton.swift; sourceTree = "<group>"; };
+		B26053D322AC24120085C8D8 /* ExtVFXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtVFXView.swift; sourceTree = "<group>"; };
 		B27C671F2299142900B8EDE0 /* ExtFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtFont.swift; sourceTree = "<group>"; };
+		B27C8AC422ACAEFB007D83E5 /* SlideUpViewBtnManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpViewBtnManage.swift; sourceTree = "<group>"; };
 		B29099D622967972008B6A57 /* ExtTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtTableView.swift; sourceTree = "<group>"; };
 		B29099FE2296EAEC008B6A57 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		B298C929226A31E300103DC4 /* MainVC+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+Actions.swift"; sourceTree = "<group>"; };
@@ -126,9 +132,12 @@
 			children = (
 				B212261A223A638D00DA3A66 /* ExtScrollView.swift */,
 				B212261C223A63D200DA3A66 /* ExtTextField.swift */,
+				B26053D122AC20620085C8D8 /* ExtButton.swift */,
 				B2BB4AA22291290E006EDA99 /* ExtView.swift */,
 				B2BB4AAA2291A9FE006EDA99 /* TaskCell.swift */,
 				B23AF16E229D153400657D2A /* BookCell.swift */,
+				B26053D322AC24120085C8D8 /* ExtVFXView.swift */,
+				B27C8AC422ACAEFB007D83E5 /* SlideUpViewBtnManage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,13 +264,16 @@
 				B2BB4AAB2291A9FE006EDA99 /* TaskCell.swift in Sources */,
 				B22ECAB1223688C9003B4819 /* EditVC.swift in Sources */,
 				B23AF16F229D153400657D2A /* BookCell.swift in Sources */,
+				B26053D422AC24120085C8D8 /* ExtVFXView.swift in Sources */,
 				B2CC52C9229EC8DB00E1925A /* BooksManager+AR.swift in Sources */,
+				B26053D222AC20620085C8D8 /* ExtButton.swift in Sources */,
 				B2BB4AA922919910006EDA99 /* TasksVC.swift in Sources */,
 				B211B8FB22325E1B00B41F5A /* AppDelegate.swift in Sources */,
 				B2BB4AA32291290E006EDA99 /* ExtView.swift in Sources */,
 				B23AF171229D350900657D2A /* ExtUIImage.swift in Sources */,
 				B212261B223A638E00DA3A66 /* ExtScrollView.swift in Sources */,
 				B2580C3F2237893E0090986E /* BooksManager.swift in Sources */,
+				B27C8AC522ACAEFB007D83E5 /* SlideUpViewBtnManage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
