@@ -12,7 +12,7 @@ import UIKit
 
 
 
-protocol EditVCDelegate {
+protocol EditVCDelegate: class {
     func onReceiveData(_ date: Date, _ description: String)
 }
 
@@ -26,7 +26,7 @@ class EditVC: UIViewController {
     var dateData: Date!
     var descriptionData: String!
 
-    var delegate: EditVCDelegate?
+    weak var delegate: EditVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

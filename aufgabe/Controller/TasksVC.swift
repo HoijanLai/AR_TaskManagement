@@ -9,7 +9,7 @@
 import UIKit
 
 
-protocol TaskVCDelegate {
+protocol TaskVCDelegate: class {
     func onUpdateData()
 }
 
@@ -19,10 +19,9 @@ class TasksVC: UIViewController {
     @IBOutlet weak var tasksTable: UITableView!
     @IBOutlet weak var welcomeText: UIStackView!
 
-    var booksManager: BooksManager!
     var book: Book!
 
-    var delegate: TaskVCDelegate?
+    weak var delegate: TaskVCDelegate?
 
 
 
@@ -40,8 +39,7 @@ class TasksVC: UIViewController {
         welcomeText.isHidden = (book.tasks!.count > 0)
     }
 
-    func initData(booksManager: BooksManager, book: Book) {
-        self.booksManager = booksManager
+    func initData(book: Book) {
         self.book = book
     }
 
@@ -71,13 +69,13 @@ class TasksVC: UIViewController {
  */
 extension TasksVC: TaskCellDelegate {
     func onDeleteData(at indexPath: IndexPath) {
-        self.booksManager.deleteTask(task: (self.booksManager.getSortedTasks(self.book)[indexPath.row]), { (_) in })
+        booksManager.deleteTask(task: (booksManager.getSortedTasks(self.book)[indexPath.row]), { (_) in })
         tasksTable.reloadData()
         welcomeText.isHidden = (book.tasks!.count > 0)
     }
 
     func onEditData(at indexPath: IndexPath, _ date: Date, _ description: String) {
-        let task = self.booksManager.getSortedTasks(self.book)[indexPath.row]
+        let task = booksManager.getSortedTasks(self.book)[indexPath.row]
         task.deadline = date
         task.content = description
         tasksTable.reloadData()
@@ -108,27 +106,6 @@ extension TasksVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
-    }
-
-//
-//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-//            self.booksManager.deleteTask(task: (self.booksManager.getSortedTasks(self.book)[indexPath.row]), { (_) in })
-//            tableView.deleteRows(at: [indexPath], with: .automatic)
-//            self.tasksTable.isHidden = (self.book.tasks!.count <= 0)
-//        }
-//        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-//
-//        return [deleteAction]
-//    }
-
-
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let taskCell = tableView.cellForRow(at: indexPath) as? TaskCell else { return }
@@ -139,9 +116,5 @@ extension TasksVC: UITableViewDelegate, UITableViewDataSource {
         guard let taskCell = tableView.cellForRow(at: indexPath) as? TaskCell else { return }
         taskCell.toggleActions(false)
     }
-
-
-
-
 
 }

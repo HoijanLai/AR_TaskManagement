@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TaskCellDelegate {
+protocol TaskCellDelegate: class {
     func onDeleteData(at indexPath: IndexPath)
     func onEditData(at indexPath: IndexPath, _ date: Date, _ description: String)
 }
@@ -20,7 +20,7 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var extView: ExtView!
 
-    var delegate: TaskCellDelegate?
+    weak var delegate: TaskCellDelegate?
     var indexPath: IndexPath!
 
     var currentTaskDate: Date!
@@ -88,7 +88,7 @@ class TaskCell: UITableViewCell {
         delegate?.onDeleteData(at: self.indexPath!)
     }
 
-    @IBAction func delBtnTapped(_ sender: Any) {
+    @IBAction func cancelBtnTapped(_ sender: Any) {
         toggleActions(false)
     }
 }

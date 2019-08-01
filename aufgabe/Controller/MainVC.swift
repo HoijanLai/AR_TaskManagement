@@ -41,14 +41,11 @@ import UIKit
 import SceneKit
 import ARKit
 
+// Data
+let booksManager = BooksManager()
+
+
 class MainVC: UIViewController, ARSCNViewDelegate {
-
-
-
-
-    // Data
-    let booksManager = BooksManager()
-
 
     // AR
     var lastHitAnchor: ARImageAnchor? // this is for editVC data communication
@@ -61,7 +58,6 @@ class MainVC: UIViewController, ARSCNViewDelegate {
 
     // Main
     @IBOutlet weak var sceneView: ARSCNView!
-    @IBOutlet weak var addBtn: UIButton!
 
 
 
@@ -69,17 +65,20 @@ class MainVC: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var itemBtnView: ExtView!
     @IBOutlet var itemSlideUpView: ExtView!
 
-
-
     @IBOutlet weak var itemBtnToBottom: NSLayoutConstraint!
     @IBOutlet weak var itemBtnHeight: NSLayoutConstraint!
     var itemSlideUpManager: SlideUpManager!
 
-
-
     @IBOutlet weak var booksCollection: UICollectionView!
 
 
+    // Add Books 
+    @IBOutlet weak var addBtnView: ExtView!
+    @IBOutlet var addSlideUpView: ExtView!
+
+    @IBOutlet weak var addBtnToBottom: NSLayoutConstraint!
+    @IBOutlet weak var addBtnHeight: NSLayoutConstraint!
+    var addSlideUpManager: SlideUpManager!
 
 
 
@@ -119,9 +118,10 @@ class MainVC: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         // sceneView.showsStatistics = true
 
-        // Actions
+        /*
+         Actions
+        */
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
-        
         sceneView.addGestureRecognizer(tapGesture)
 
 
@@ -132,8 +132,20 @@ class MainVC: UIViewController, ARSCNViewDelegate {
         */
 
         // item button
-        itemSlideUpManager = SlideUpManager(itemBtnView, itemSlideUpView, view)
+        itemSlideUpManager = SlideUpManager(btnV: itemBtnView,
+                                            containerV: itemSlideUpView,
+                                            completion: { _ in
+                                                            self.sceneView.toggleDarkMask()
+                                                            self.addBtnView.isHidden = !self.addBtnView.isHidden
+                                                        })
 
+        // add button
+        addSlideUpManager = SlideUpManager(btnV: addBtnView,
+                                           containerV: addSlideUpView,
+                                           completion: { _ in
+                                                           self.sceneView.toggleDarkMask()
+                                                           self.itemBtnView.isHidden = !self.itemBtnView.isHidden
+                                                       })
 
 
 
@@ -186,4 +198,21 @@ class MainVC: UIViewController, ARSCNViewDelegate {
 
     }
 
+}
+
+
+
+
+
+/*
+ Interaction with TasksVC
+ */
+extension MainVC: TaskVCDelegate {
+    func onUpdateData() {
+        sceneView.session.run(booksManager.getTrackingConfig(), options: .resetTracking)
+        if lastHitAnchor != nil {
+            updateNodeForAnchor(lastHitAnchor!)
+        }
+        booksCollection.reloadData()
+    }
 }
