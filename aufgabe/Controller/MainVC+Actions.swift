@@ -15,6 +15,20 @@ extension MainVC {
 
     @objc
     func didTap(_ gesture: UITapGestureRecognizer) {
+
+
+        // 
+        
+
+        if !children.isEmpty {
+            for c in children {
+                c.dismiss(animated: false, completion: nil)
+            }
+            return
+        }
+
+
+        // if sceneView is touchable
         let tappedLocation = gesture.location(in: sceneView)
 
         let hitResults = sceneView.hitTest(tappedLocation, options: [.boundingBoxOnly: true])

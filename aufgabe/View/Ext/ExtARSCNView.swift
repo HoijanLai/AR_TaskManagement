@@ -10,7 +10,6 @@ import ARKit
 
 
 extension ARSCNView {
-
     func toggleDarkMask() {
         if let subL = self.layer.sublayers {
             for l in subL {
@@ -23,12 +22,8 @@ extension ARSCNView {
 
         let darkLayer = CALayer()
         darkLayer.frame = self.frame
-        darkLayer.backgroundColor = UIColor.black.cgColor
-        darkLayer.opacity = 0.7
+        darkLayer.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
         darkLayer.name = "dark"
         self.layer.addSublayer(darkLayer)
     }
-
-
-
 }

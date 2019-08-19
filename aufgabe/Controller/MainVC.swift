@@ -61,24 +61,11 @@ class MainVC: UIViewController, ARSCNViewDelegate {
 
 
 
-    // Book Collection
-    @IBOutlet weak var itemBtnView: ExtView!
-    @IBOutlet var itemSlideUpView: ExtView!
-
-    @IBOutlet weak var itemBtnToBottom: NSLayoutConstraint!
-    @IBOutlet weak var itemBtnHeight: NSLayoutConstraint!
-    var itemSlideUpManager: SlideUpManager!
-
-    @IBOutlet weak var booksCollection: UICollectionView!
-
-
-    // Add Books 
+    // Add Books
     @IBOutlet weak var addBtnView: ExtView!
-    @IBOutlet var addSlideUpView: ExtView!
-
     @IBOutlet weak var addBtnToBottom: NSLayoutConstraint!
     @IBOutlet weak var addBtnHeight: NSLayoutConstraint!
-    var addSlideUpManager: SlideUpManager!
+    var slideUpViewFrame: CGRect!
 
 
 
@@ -110,10 +97,6 @@ class MainVC: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
 
-        // books
-        booksCollection.delegate = self
-        booksCollection.dataSource = self
-
 
         // Show statistics such as fps and timing information
         // sceneView.showsStatistics = true
@@ -130,22 +113,7 @@ class MainVC: UIViewController, ARSCNViewDelegate {
         /*
          UI
         */
-
-        // item button
-        itemSlideUpManager = SlideUpManager(btnV: itemBtnView,
-                                            containerV: itemSlideUpView,
-                                            completion: { _ in
-                                                            self.sceneView.toggleDarkMask()
-                                                            self.addBtnView.isHidden = !self.addBtnView.isHidden
-                                                        })
-
-        // add button
-        addSlideUpManager = SlideUpManager(btnV: addBtnView,
-                                           containerV: addSlideUpView,
-                                           completion: { _ in
-                                                           self.sceneView.toggleDarkMask()
-                                                           self.itemBtnView.isHidden = !self.itemBtnView.isHidden
-                                                       })
+        slideUpViewFrame = CGRect(x: 0, y: self.view.frame.maxY, width: self.view.frame.width, height: 240)
 
 
 
@@ -213,6 +181,6 @@ extension MainVC: TaskVCDelegate {
         if lastHitAnchor != nil {
             updateNodeForAnchor(lastHitAnchor!)
         }
-        booksCollection.reloadData()
+        // booksCollection.reloadData()
     }
 }

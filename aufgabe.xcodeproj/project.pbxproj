@@ -22,10 +22,16 @@
 		B2580C3F2237893E0090986E /* BooksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2580C3E2237893E0090986E /* BooksManager.swift */; };
 		B26053D222AC20620085C8D8 /* ExtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26053D122AC20620085C8D8 /* ExtButton.swift */; };
 		B26053D422AC24120085C8D8 /* ExtVFXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26053D322AC24120085C8D8 /* ExtVFXView.swift */; };
+		B26FF4F32300974A00788E18 /* AddItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B26FF4F22300974A00788E18 /* AddItemView.xib */; };
+		B26FF4F52300B86000788E18 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26FF4F42300B86000788E18 /* AddItemView.swift */; };
 		B27C67202299142900B8EDE0 /* ExtFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C671F2299142900B8EDE0 /* ExtFont.swift */; };
-		B27C8AC522ACAEFB007D83E5 /* SlideUpViewBtnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C8AC422ACAEFB007D83E5 /* SlideUpViewBtnManager.swift */; };
 		B29099D722967972008B6A57 /* ExtTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29099D622967972008B6A57 /* ExtTableView.swift */; };
 		B29099FF2296EAEC008B6A57 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B29099FE2296EAEC008B6A57 /* art.scnassets */; };
+		B2939E0523015DB6005B3033 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2939E0323015DB6005B3033 /* ItemCell.swift */; };
+		B2939E0623015DB6005B3033 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2939E0423015DB6005B3033 /* ItemCell.xib */; };
+		B2939E0A23016772005B3033 /* SlideUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2939E0923016772005B3033 /* SlideUpVC.swift */; };
+		B2939E0C2301C935005B3033 /* ShowItemsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2939E0B2301C935005B3033 /* ShowItemsView.xib */; };
+		B2939E0E2301C96D005B3033 /* ShowItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2939E0D2301C96D005B3033 /* ShowItemsView.swift */; };
 		B298C92A226A31E300103DC4 /* MainVC+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298C929226A31E300103DC4 /* MainVC+Actions.swift */; };
 		B29D5E5722AE6158003B960F /* ExtARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D5E5622AE6158003B960F /* ExtARSCNView.swift */; };
 		B2B98A3922857B6F00D552E6 /* aufgabe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2B98A3722857B6F00D552E6 /* aufgabe.xcdatamodeld */; };
@@ -53,10 +59,16 @@
 		B2580C3E2237893E0090986E /* BooksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksManager.swift; sourceTree = "<group>"; };
 		B26053D122AC20620085C8D8 /* ExtButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtButton.swift; sourceTree = "<group>"; };
 		B26053D322AC24120085C8D8 /* ExtVFXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtVFXView.swift; sourceTree = "<group>"; };
+		B26FF4F22300974A00788E18 /* AddItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddItemView.xib; sourceTree = "<group>"; };
+		B26FF4F42300B86000788E18 /* AddItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		B27C671F2299142900B8EDE0 /* ExtFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtFont.swift; sourceTree = "<group>"; };
-		B27C8AC422ACAEFB007D83E5 /* SlideUpViewBtnManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpViewBtnManager.swift; sourceTree = "<group>"; };
 		B29099D622967972008B6A57 /* ExtTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtTableView.swift; sourceTree = "<group>"; };
 		B29099FE2296EAEC008B6A57 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		B2939E0323015DB6005B3033 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		B2939E0423015DB6005B3033 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		B2939E0923016772005B3033 /* SlideUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpVC.swift; sourceTree = "<group>"; };
+		B2939E0B2301C935005B3033 /* ShowItemsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowItemsView.xib; sourceTree = "<group>"; };
+		B2939E0D2301C96D005B3033 /* ShowItemsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowItemsView.swift; sourceTree = "<group>"; };
 		B298C929226A31E300103DC4 /* MainVC+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+Actions.swift"; sourceTree = "<group>"; };
 		B29D5E5622AE6158003B960F /* ExtARSCNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtARSCNView.swift; sourceTree = "<group>"; };
 		B2B98A3822857B6F00D552E6 /* Books.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Books.xcdatamodel; sourceTree = "<group>"; };
@@ -82,6 +94,7 @@
 			children = (
 				B29099FE2296EAEC008B6A57 /* art.scnassets */,
 				B211B8F922325E1B00B41F5A /* aufgabe */,
+				B2939E072301601E005B3033 /* xib */,
 				B211B8F822325E1B00B41F5A /* Products */,
 				B229323622390E3900754B35 /* Frameworks */,
 			);
@@ -103,8 +116,6 @@
 				B2580C3C223788D40090986E /* View */,
 				B2580C3B223788C40090986E /* Controller */,
 				B211B8FA22325E1B00B41F5A /* AppDelegate.swift */,
-				B211B90522325E1D00B41F5A /* LaunchScreen.storyboard */,
-				B211B90022325E1B00B41F5A /* Main.storyboard */,
 				B211B90E223274B000B41F5A /* Asset.xcassets */,
 				B211B90822325E1D00B41F5A /* Info.plist */,
 				B2B98A3722857B6F00D552E6 /* aufgabe.xcdatamodeld */,
@@ -122,6 +133,7 @@
 		B2580C3B223788C40090986E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B2939E0923016772005B3033 /* SlideUpVC.swift */,
 				B211B8FE22325E1B00B41F5A /* MainVC.swift */,
 				B298C929226A31E300103DC4 /* MainVC+Actions.swift */,
 				B2466C8822D3A6380020C2A7 /* MainVC+AddBooks.swift */,
@@ -137,13 +149,10 @@
 		B2580C3C223788D40090986E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B212261A223A638D00DA3A66 /* ExtScrollView.swift */,
-				B26053D122AC20620085C8D8 /* ExtButton.swift */,
-				B2BB4AA22291290E006EDA99 /* ExtView.swift */,
-				B212261C223A63D200DA3A66 /* ExtTextField.swift */,
-				B26053D322AC24120085C8D8 /* ExtVFXView.swift */,
-				B27C8AC422ACAEFB007D83E5 /* SlideUpViewBtnManager.swift */,
-				B29D5E5622AE6158003B960F /* ExtARSCNView.swift */,
+				B2939E082301604D005B3033 /* Ext */,
+				B2939E0323015DB6005B3033 /* ItemCell.swift */,
+				B26FF4F42300B86000788E18 /* AddItemView.swift */,
+				B2939E0D2301C96D005B3033 /* ShowItemsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +174,31 @@
 				B23AF170229D350900657D2A /* ExtUIImage.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B2939E072301601E005B3033 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				B2939E0423015DB6005B3033 /* ItemCell.xib */,
+				B211B90522325E1D00B41F5A /* LaunchScreen.storyboard */,
+				B211B90022325E1B00B41F5A /* Main.storyboard */,
+				B2939E0B2301C935005B3033 /* ShowItemsView.xib */,
+				B26FF4F22300974A00788E18 /* AddItemView.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		B2939E082301604D005B3033 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				B212261A223A638D00DA3A66 /* ExtScrollView.swift */,
+				B26053D122AC20620085C8D8 /* ExtButton.swift */,
+				B2BB4AA22291290E006EDA99 /* ExtView.swift */,
+				B212261C223A63D200DA3A66 /* ExtTextField.swift */,
+				B26053D322AC24120085C8D8 /* ExtVFXView.swift */,
+				B29D5E5622AE6158003B960F /* ExtARSCNView.swift */,
+			);
+			path = Ext;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,10 +280,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2939E0C2301C935005B3033 /* ShowItemsView.xib in Resources */,
 				B211B90722325E1D00B41F5A /* LaunchScreen.storyboard in Resources */,
 				B29099FF2296EAEC008B6A57 /* art.scnassets in Resources */,
 				B211B90F223274B000B41F5A /* Asset.xcassets in Resources */,
 				B211B90222325E1B00B41F5A /* Main.storyboard in Resources */,
+				B2939E0623015DB6005B3033 /* ItemCell.xib in Resources */,
+				B26FF4F32300974A00788E18 /* AddItemView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,12 +298,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B212261D223A63D200DA3A66 /* ExtTextField.swift in Sources */,
+				B2939E0A23016772005B3033 /* SlideUpVC.swift in Sources */,
 				B27C67202299142900B8EDE0 /* ExtFont.swift in Sources */,
 				B23AF16D229D146600657D2A /* MainVC+BooksCollection.swift in Sources */,
 				B29099D722967972008B6A57 /* ExtTableView.swift in Sources */,
 				B2B98A3922857B6F00D552E6 /* aufgabe.xcdatamodeld in Sources */,
 				B298C92A226A31E300103DC4 /* MainVC+Actions.swift in Sources */,
 				B2466C8922D3A6380020C2A7 /* MainVC+AddBooks.swift in Sources */,
+				B26FF4F52300B86000788E18 /* AddItemView.swift in Sources */,
 				B29D5E5722AE6158003B960F /* ExtARSCNView.swift in Sources */,
 				B211B8FF22325E1B00B41F5A /* MainVC.swift in Sources */,
 				B2BB4AAB2291A9FE006EDA99 /* TaskCell.swift in Sources */,
@@ -278,10 +317,11 @@
 				B2BB4AA922919910006EDA99 /* TasksVC.swift in Sources */,
 				B211B8FB22325E1B00B41F5A /* AppDelegate.swift in Sources */,
 				B2BB4AA32291290E006EDA99 /* ExtView.swift in Sources */,
+				B2939E0523015DB6005B3033 /* ItemCell.swift in Sources */,
 				B23AF171229D350900657D2A /* ExtUIImage.swift in Sources */,
 				B212261B223A638E00DA3A66 /* ExtScrollView.swift in Sources */,
+				B2939E0E2301C96D005B3033 /* ShowItemsView.swift in Sources */,
 				B2580C3F2237893E0090986E /* BooksManager.swift in Sources */,
-				B27C8AC522ACAEFB007D83E5 /* SlideUpViewBtnManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
