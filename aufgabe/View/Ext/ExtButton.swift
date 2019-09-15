@@ -72,6 +72,21 @@ class ExtButton: UIButton {
     }
 
 
+    @IBInspectable
+    public var borderWidth: CGFloat = 1 {
+        didSet {
+            self.layer.borderWidth = self.borderWidth
+        }
+    }
+
+    @IBInspectable
+    public var borderColor: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) {
+        didSet {
+            self.layer.borderColor = self.borderColor.cgColor
+        }
+    }
+
+
     func dropShadow() {
         if shadow {
             let shadowLayer = CAShapeLayer()

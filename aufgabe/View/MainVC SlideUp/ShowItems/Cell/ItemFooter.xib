@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemFooter" customModule="aufgabe" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ItemFooter" id="okP-fX-E5f" customClass="ItemFooter" customModule="aufgabe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyS-2S-jzs" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_light" translatesAutoresizingMaskIntoConstraints="NO" id="Zhq-Jz-fvK">
+                            <rect key="frame" x="40" y="50" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Zhq-Jz-fvK" secondAttribute="height" multiplier="1:1" id="7Do-cP-dYt"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOG-0C-WVB" customClass="ExtButton" customModule="aufgabe" customModuleProvider="target">
+                            <rect key="frame" x="25" y="35" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="AXq-C2-u4X"/>
+                                <constraint firstAttribute="width" constant="50" id="t6Z-2I-FT7"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="addBtnTapped" destination="okP-fX-E5f" eventType="touchUpInside" id="T9n-J8-88S"/>
+                                <action selector="addBtnTapped" destination="-1" eventType="touchUpInside" id="cLM-my-wTi"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="AOG-0C-WVB" firstAttribute="centerX" secondItem="xyS-2S-jzs" secondAttribute="centerX" id="GGt-fQ-kVS"/>
+                        <constraint firstItem="Zhq-Jz-fvK" firstAttribute="centerX" secondItem="AOG-0C-WVB" secondAttribute="centerX" id="OCg-iv-RBC"/>
+                        <constraint firstItem="Zhq-Jz-fvK" firstAttribute="width" secondItem="AOG-0C-WVB" secondAttribute="width" constant="-30" id="Sah-S6-odE"/>
+                        <constraint firstItem="AOG-0C-WVB" firstAttribute="centerY" secondItem="xyS-2S-jzs" secondAttribute="centerY" id="h4R-dL-EDv"/>
+                        <constraint firstItem="Zhq-Jz-fvK" firstAttribute="centerY" secondItem="AOG-0C-WVB" secondAttribute="centerY" id="vec-Mm-dLi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="xyS-2S-jzs" secondAttribute="bottom" id="Zp2-Iy-4O8"/>
+                <constraint firstItem="xyS-2S-jzs" firstAttribute="leading" secondItem="okP-fX-E5f" secondAttribute="leading" id="gCI-MD-Dhz"/>
+                <constraint firstItem="xyS-2S-jzs" firstAttribute="top" secondItem="okP-fX-E5f" secondAttribute="top" id="pTF-lz-vqj"/>
+                <constraint firstAttribute="trailing" secondItem="xyS-2S-jzs" secondAttribute="trailing" id="qqE-FR-dBM"/>
+            </constraints>
+            <point key="canvasLocation" x="-26" y="138"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="add_light" width="143" height="143"/>
+    </resources>
+</document>

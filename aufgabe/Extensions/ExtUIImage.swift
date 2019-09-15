@@ -8,6 +8,16 @@
 
 import UIKit
 
+//
+//  ExtView.swift
+//  aufgabe
+//
+//  Created by Hoijan Lai on 2019/5/19.
+//  Copyright © 2019 Hoijan Lai. All rights reserved.
+//
+
+import UIKit
+
 
 extension UIImage {
     func resized(withPercentage percentage: CGFloat) -> UIImage? {

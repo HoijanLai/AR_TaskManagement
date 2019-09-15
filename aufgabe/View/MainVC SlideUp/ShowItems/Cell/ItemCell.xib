@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ItemCell" id="gTV-IL-0wX" customClass="ItemCell" customModule="aufgabe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="119" height="157"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="119" height="157"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8D-BT-Nq6" userLabel="Content View">
+                        <rect key="frame" x="0.0" y="0.0" width="119" height="157"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4x-pY-Bo8" customClass="ExtView" customModule="aufgabe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="119" height="157"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6h-of-L5B" userLabel="Radius Crop" customClass="ExtView" customModule="aufgabe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="119" height="157"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sam-ferrara-318709" translatesAutoresizingMaskIntoConstraints="NO" id="gjV-QI-nB5" userLabel="item image">
+                                                <rect key="frame" x="0.0" y="0.0" width="119" height="157"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uqb-u2-tkh" userLabel="Title Background" customClass="ExtView" customModule="aufgabe" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="127" width="119" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Onr-oc-LGV">
+                                                        <rect key="frame" x="49" y="3" width="62" height="12.5"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="9"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.39760809070000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Onr-oc-LGV" firstAttribute="top" secondItem="Uqb-u2-tkh" secondAttribute="top" constant="3" id="3vd-Rh-CqI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Onr-oc-LGV" secondAttribute="trailing" constant="8" id="B8k-0j-r4d"/>
+                                                    <constraint firstAttribute="height" constant="30" id="NzH-p2-ElG"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="gjV-QI-nB5" firstAttribute="top" secondItem="b6h-of-L5B" secondAttribute="top" id="Icv-js-nbc"/>
+                                            <constraint firstAttribute="trailing" secondItem="gjV-QI-nB5" secondAttribute="trailing" id="MHL-bB-V9I"/>
+                                            <constraint firstAttribute="bottom" secondItem="Uqb-u2-tkh" secondAttribute="bottom" id="ZtB-ph-wkx"/>
+                                            <constraint firstItem="Uqb-u2-tkh" firstAttribute="leading" secondItem="b6h-of-L5B" secondAttribute="leading" id="gZG-Bo-xWg"/>
+                                            <constraint firstAttribute="bottom" secondItem="gjV-QI-nB5" secondAttribute="bottom" id="huO-2f-are"/>
+                                            <constraint firstAttribute="trailing" secondItem="Uqb-u2-tkh" secondAttribute="trailing" id="kio-5o-TVq"/>
+                                            <constraint firstItem="gjV-QI-nB5" firstAttribute="leading" secondItem="b6h-of-L5B" secondAttribute="leading" id="pLS-Ve-cDe"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="b6h-of-L5B" secondAttribute="bottom" id="CPi-DT-GsP"/>
+                                    <constraint firstItem="b6h-of-L5B" firstAttribute="leading" secondItem="g4x-pY-Bo8" secondAttribute="leading" id="GpF-ME-nxL"/>
+                                    <constraint firstAttribute="trailing" secondItem="b6h-of-L5B" secondAttribute="trailing" id="mmf-0u-hJD"/>
+                                    <constraint firstItem="b6h-of-L5B" firstAttribute="top" secondItem="g4x-pY-Bo8" secondAttribute="top" id="oCE-SY-T2A"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g4x-pY-Bo8" firstAttribute="leading" secondItem="w8D-BT-Nq6" secondAttribute="leading" id="Daf-O7-Yl7"/>
+                            <constraint firstAttribute="trailing" secondItem="g4x-pY-Bo8" secondAttribute="trailing" id="XC2-1y-fCo"/>
+                            <constraint firstAttribute="bottom" secondItem="g4x-pY-Bo8" secondAttribute="bottom" id="Yzh-Gr-9X9"/>
+                            <constraint firstItem="g4x-pY-Bo8" firstAttribute="top" secondItem="w8D-BT-Nq6" secondAttribute="top" id="nNN-sk-Iq3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="w8D-BT-Nq6" secondAttribute="trailing" id="7bt-lB-PP5"/>
+                <constraint firstItem="w8D-BT-Nq6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MLe-4I-bTU"/>
+                <constraint firstAttribute="bottom" secondItem="w8D-BT-Nq6" secondAttribute="bottom" id="Pnc-qD-a6t"/>
+                <constraint firstItem="w8D-BT-Nq6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fEb-iZ-zyD"/>
+            </constraints>
+            <size key="customSize" width="119" height="157"/>
+            <connections>
+                <outlet property="imageView" destination="gjV-QI-nB5" id="axc-yK-ac9"/>
+                <outlet property="mainView" destination="g4x-pY-Bo8" id="gor-E3-DwC"/>
+                <outlet property="titleLabel" destination="Onr-oc-LGV" id="JYl-7H-xRu"/>
+            </connections>
+            <point key="canvasLocation" x="-36.956521739130437" y="133.59375"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="sam-ferrara-318709" width="2571" height="3840"/>
+    </resources>
+</document>
